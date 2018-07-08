@@ -1,0 +1,67 @@
+{
+  "name": "@fabrix/generics-stripe",
+  "version": "1.0.0",
+  "description": "Generic: Stripe.com for Spool Generics",
+  "homepage": "https://fabrix.app",
+  "author": {
+    "name": "scott-wyatt",
+    "email": "scottwyatt86@gmail.com",
+    "url": "https://cali-style.com"
+  },
+  "keywords": [
+    "proxy-engine",
+    "proxy-cart",
+    "generics",
+    "stripe",
+    "trailpack",
+    "fabrix",
+    "trailjs"
+  ],
+  "scripts": {
+    "build": "tsc -p ./lib/tsconfig.release.json",
+    "lint": "tslint -p ./lib",
+    "watch": "tsc -w -p ./lib/tsconfig.release.json",
+    "test": "npm run clean && npm run lint && npm run build && nyc mocha",
+    "prepublishOnly": "npm run compile",
+    "compile": "npm run clean && npm run build",
+    "clean": "rm -rf dist"
+  },
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "pre-commit": [
+    "test"
+  ],
+  "dependencies": {
+    "stripe": "^5.3.0",
+    "lodash": "^4.11.1"
+  },
+  "devDependencies": {
+    "@fabrix/fabrix": "^1.0.5",
+    "@fabrix/lint": "^1.0.0-alpha.3",
+    "@fabrix/spool-generics": "^1.0.3",
+    "@fabrix/spool-router": "^1.0.0",
+    "lodash": "^4.11.1",
+    "@types/node": "~10.3.4",
+    "mocha": "^5",
+    "nyc": "^12.0.2",
+    "smokesignals": "^2.0.0",
+    "supertest": "^2.0.1",
+    "tslib": "~1.9.0",
+    "tslint": "~5.10.0",
+    "tslint-microsoft-contrib": "~5.0.3",
+    "tsutils": "~2.27.1",
+    "typescript": "~2.8.1"
+  },
+  "peerDependencies": {
+    "@fabrix/spool-generics": "^1.0.3"
+  },
+  "engines": {
+    "node": ">= 7.6.0 =< 10.0.0",
+    "npm": ">= 3.10.0"
+  },
+  "repository": "git@github.com:fabrix-app/generics-stripe.git",
+  "license": "MIT"
+}

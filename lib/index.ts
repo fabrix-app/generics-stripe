@@ -1,0 +1,1 @@
+export { StripeGeneric } from './StripeGeneric'
