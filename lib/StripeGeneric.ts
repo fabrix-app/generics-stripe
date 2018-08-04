@@ -1,15 +1,12 @@
 // tslint:disable max-line-length
 
 import * as Stripe from 'stripe'
+import { Generic } from '@fabrix/spool-generics'
 
-export class StripeGeneric {
+export class StripeGeneric extends Generic {
   public config: {
     stripe_secret: string,
     stripe_public: string
-  }
-
-  constructor(config) {
-    this.config = config
   }
 
   /**

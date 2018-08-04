@@ -5,7 +5,7 @@ const smokesignals = require('smokesignals')
 
 module.exports = _.defaultsDeep({
   pkg: {
-    name: require('../package').name + '-test'
+    name: require('../../package').name + '-test'
   },
   api: { },
   config: {
@@ -17,12 +17,12 @@ module.exports = _.defaultsDeep({
     },
     generics: {
       stripe: {
-        adapter: require('../dist').StripeGeneric,
+        adapter: require('../../dist/index').StripeGeneric,
         config: {
           stripe_public: process.env.STRIPE_PUBLIC,
           stripe_secret: process.env.STRIPE_SECRET
         },
-        api: require('../dist/api/index')
+        api: require('../../dist/api/index')
       }
     }
   }
